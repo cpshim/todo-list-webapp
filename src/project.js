@@ -1,15 +1,15 @@
 class Project{
     constructor(name){
         this.name = name;
-        this.list = [];
+        this.taskList = [];
     }
 
     addTask(task){
-        this.list.push(task);
+        this.taskList.push(task);
     }
 
     removeTask(index){
-        this.list.splice(index, 1);
+        this.taskList.splice(index, 1);
     }
 }
 
