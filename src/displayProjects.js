@@ -1,6 +1,8 @@
 function renderProjects(projects){
     const projectArea = document.querySelector('#projects');
 
+    projectArea.innerHTML = '';
+
     for (let i = 0; i < projects.projectList.length; i++){
         const projectDiv = document.createElement('div');
         projectDiv.classList.add('project-div');

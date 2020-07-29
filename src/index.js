@@ -66,6 +66,7 @@ const newProjectForm = document.querySelector('.project-form');
 const closeTaskBtn = document.querySelector('#task-close');
 const closeProjectBtn = document.querySelector('#project-close');
 const taskSubmitBtn = document.querySelector('#task-submit');
+const projectSubmitBtn = document.querySelector('#project-submit');
 
 closeTaskBtn.addEventListener('click', () => {
     newTaskForm.setAttribute('style', 'display: none');
@@ -82,5 +83,14 @@ taskSubmitBtn.addEventListener('click', () => {
     currentProject.addTask(newTask);
     renderTasks(currentProject);
     newTaskForm.setAttribute('style', 'display: none');
+    setEventListeners();
+});
+
+projectSubmitBtn.addEventListener('click', () => {
+    let title = document.getElementById('project-title').value;
+    let newProject = new Project(title);
+    projectList.addProject(newProject);
+    renderProjects(projectList);
+    newProjectForm.setAttribute('style', 'display: none');
     setEventListeners();
 });
