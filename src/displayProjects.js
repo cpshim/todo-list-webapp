@@ -2,11 +2,15 @@ function renderProjects(projects){
     const projectArea = document.querySelector('#projects');
 
     for (let i = 0; i < projects.projectList.length; i++){
-        const name = document.createElement('h1');
+        const projectDiv = document.createElement('div');
+        projectDiv.classList.add('project-div');
+        const name = document.createElement('h2');
 
         name.textContent = projects.projectList[i].name;
 
-        projectArea.appendChild(name);
+        projectDiv.appendChild(name);
+
+        projectArea.appendChild(projectDiv);
     }
 }
 

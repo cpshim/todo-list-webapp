@@ -4,6 +4,8 @@ function renderTasks(project){
     projectTitle.classList.add('project-title');
     projectTitle.textContent = project.name;
 
+    taskArea.innerHTML = '';
+
     taskArea.appendChild(projectTitle);
 
     for (let i = 0; i < project.taskList.length; i++){
@@ -16,16 +18,11 @@ function renderTasks(project){
         const label = document.createElement('label');
         label.classList.add('check-container');
 
-        const check = document.createElement("input");
+        const check = document.createElement('input');
         check.classList.add('check');
-        check.setAttribute("type", "checkbox");
+        check.setAttribute('type', 'checkbox');
 
-        check.addEventListener('click', () => {
-            taskInfo.classList.add('strike');
-            checkCustom.setAttribute('style', 'background-color: #009BFF');
-        });
-
-        const checkCustom = document.createElement("span");
+        const checkCustom = document.createElement('span');
         checkCustom.classList.add('check-custom');
         taskInfo.textContent = `${project.taskList[i].title}: ${project.taskList[i].description}`;
 
@@ -37,6 +34,16 @@ function renderTasks(project){
         taskArea.appendChild(line);
     }
 
+    const newBtnDiv = document.createElement('div');
+    newBtnDiv.classList.add('newbtn-div');
+
+    const newTaskBtn = document.createElement('button');
+    newTaskBtn.classList.add('newtask-btn');
+    newTaskBtn.setAttribute('type', 'button');
+    newTaskBtn.textContent = "+ New Task";
+
+    newBtnDiv.appendChild(newTaskBtn);
+    taskArea.appendChild(newBtnDiv);
 }
 
 export default renderTasks;

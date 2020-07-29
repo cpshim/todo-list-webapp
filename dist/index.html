@@ -20,6 +20,27 @@
                     </div>
                 </div>
             </div>
+            <div class="task-form">
+                <div class="task-form-content">
+                    <button id="close">X</button>
+                    <form class="user-input">
+                        <h2>Enter Task Information</h2>
+                        <hr>
+                        <input id="title" type="text" placeholder="Title">
+                        <input id="description" type="text" placeholder="Description">
+                        <input id="numOfPages" type="number" placeholder="Number of Pages" min="1">
+                        <div class="priority-btns">
+                            <label for="priority">
+                                <input id="high" name="priority" type="radio">High
+                                <input id="low" name="priority" type="radio">Low
+                            </label>
+                        </div>
+                        <div class="submit-div">
+                            <button id="task-submit" type="button">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </body>
     </main>
     <script src="main.js"></script>
