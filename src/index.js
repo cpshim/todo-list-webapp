@@ -50,16 +50,29 @@ function setEventListeners(){
             setEventListeners();
         });     
     }
+
+    const newProjectBtn = document.querySelector('.newproject-btn');
+    const newProjectForm = document.querySelector('.project-form');
+
+    newProjectBtn.addEventListener('click', () => {
+        newProjectForm.setAttribute('style', 'display: block');
+    });
 }
 
 setEventListeners();
 
 const newTaskForm = document.querySelector('.task-form');
-const closeBtn = document.querySelector('#close');
+const newProjectForm = document.querySelector('.project-form');
+const closeTaskBtn = document.querySelector('#task-close');
+const closeProjectBtn = document.querySelector('#project-close');
 const taskSubmitBtn = document.querySelector('#task-submit');
 
-closeBtn.addEventListener('click', () => {
+closeTaskBtn.addEventListener('click', () => {
     newTaskForm.setAttribute('style', 'display: none');
+});
+
+closeProjectBtn.addEventListener('click', () => {
+    newProjectForm.setAttribute('style', 'display: none');
 });
 
 taskSubmitBtn.addEventListener('click', () => {

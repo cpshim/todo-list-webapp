@@ -12,6 +12,17 @@ function renderProjects(projects){
 
         projectArea.appendChild(projectDiv);
     }
+
+    const newBtnDiv = document.createElement('div');
+    newBtnDiv.classList.add('newbtn-div');
+
+    const newProjectBtn = document.createElement('button');
+    newProjectBtn.classList.add('newproject-btn');
+    newProjectBtn.setAttribute('type', 'button');
+    newProjectBtn.textContent = "+ New Project";
+
+    newBtnDiv.appendChild(newProjectBtn);
+    projectArea.appendChild(newBtnDiv);
 }
 
 export default renderProjects;
