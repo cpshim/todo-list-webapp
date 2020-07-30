@@ -8,7 +8,7 @@ import ProjectList from "./projectList";
 
 const test = new Task("Reminder", "Finish up testing and show demo", 25, "high");
 const test2 = new Task("Help", "Call for help", 1, "low");
-const test3 = new Task("Pick up", "Pick up groceries", 30, "high");
+const test3 = new Task("Reminder", "Pick up groceries", 30, "high");
 const project = new Project("My Project");
 const project2 = new Project("My Project 2");
 const projectList = new ProjectList();
