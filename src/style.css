@@ -325,6 +325,7 @@ hr{
     border: 1px solid black;
     border-radius: 5px;
     font-size: 20px;
+    margin-top: 10px;
 }
 
 #task-submit:hover{
@@ -364,4 +365,13 @@ hr{
     100%{
         transform: scale(1.5);
     }
+}
+
+.priority-btns{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.priority-btns input{
+    width: 50px;
 }
