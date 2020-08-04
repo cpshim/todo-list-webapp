@@ -335,6 +335,21 @@ hr{
     cursor: pointer;
 }
 
+#project-submit{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#project-submit:hover{
+    animation-name: submit-hover;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+}
+
 @keyframes submit-hover{
     0%{
         transform: scale(1);
