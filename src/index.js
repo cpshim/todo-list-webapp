@@ -5,10 +5,11 @@ import "./style.css";
 import renderTasks from "./displayTasks";
 import renderProjects from "./displayProjects";
 import ProjectList from "./projectList";
+import Litepicker from 'litepicker';
 
-const test = new Task("Reminder", "Finish up testing and show demo", 25, "high");
-const test2 = new Task("Help", "Call for help", 1, "low");
-const test3 = new Task("Reminder", "Pick up groceries", 30, "high");
+const test = new Task("Reminder", "Finish up testing and show demo", "Jul 09, 2020", "High");
+const test2 = new Task("Help", "Call for help", "Aug 17, 2020", "Low");
+const test3 = new Task("Reminder", "Pick up groceries", "Jul 27, 2020", "High");
 const project = new Project("My Project");
 const project2 = new Project("My Project 2");
 const projectList = new ProjectList();
@@ -79,7 +80,17 @@ closeProjectBtn.addEventListener('click', () => {
 taskSubmitBtn.addEventListener('click', () => {
     let title = document.getElementById('title').value;
     let desc = document.getElementById('description').value;
-    let newTask = new Task(title, desc, 4, "hgih");
+    let date = document.getElementById('datepicker').value;
+    let priority = null;
+    if (document.getElementById('high').checked) {
+        priority = "High";
+    }
+    else if(document.getElementById('low').checked) {
+        priority = "Low";
+    }
+    console.log(date);
+    let newTask = new Task(title, desc, date, priority);
+    console.log(newTask);
     currentProject.addTask(newTask);
     renderTasks(currentProject);
     newTaskForm.setAttribute('style', 'display: none');
@@ -93,4 +104,9 @@ projectSubmitBtn.addEventListener('click', () => {
     renderProjects(projectList);
     newProjectForm.setAttribute('style', 'display: none');
     setEventListeners();
+});
+
+var picker = new Litepicker({
+    element: document.getElementById('datepicker'),
+    format: 'MMM DD, YYYY',
 });
